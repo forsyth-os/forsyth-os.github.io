@@ -1,0 +1,5 @@
+[33m7075c0d[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m Update README: remove banner and update live site URL to GitHub Pages
+[33m68044de[m Fix 404 errors on project pages by disabling strict mode
+[33mec90daa[m Fix base path for GitHub Pages deployment
+[33mff7cb19[m Fix GitHub Pages deployment permissions and use official GitHub Pages actions
+[33m7ba317a[m Update package-lock.json for new dependencies
