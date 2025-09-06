@@ -16,9 +16,6 @@ const config = {
 			fallback: null,
 			precompress: false
 		}),
-		prerender: {
-			default: true,
-		},
 		paths: {
 			base: dev ? '' : '/forsyth-os.github.io',
 		}
@@ -26,3 +23,6 @@ const config = {
 };
 
 export default config;
+
+// Enable prerendering for all pages
+export const prerender = true;
