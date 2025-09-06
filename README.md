@@ -1,8 +1,8 @@
-# <img src="banner.jpg" align="center" alt="banner"/>
+# Alex Forsyth's Portfolio Website
 
 Source code for Alex Forsyth's portfolio website
 
-[![Visit Live Site](https://img.shields.io/badge/Visit%20Live%20Site-222224?style=for-the-badge)](https://alexforsyth.com)
+[![Visit Live Site](https://img.shields.io/badge/Visit%20Live%20Site-222224?style=for-the-badge)](https://forsyth-os.github.io/)
 
 ### Source Information
 
@@ -12,9 +12,7 @@ This website is built with
 - [Slickscroll (Scroll Effects)](https://github.com/alexforsyth1/slickscrolljs)
 - [Anime (Animations)](https://github.com/juliangarnier/anime)
 - [Three.js (3D Effects)](https://github.com/mrdoob/three.js/)
-- [Firebase (Hosting)](https://firebase.google.com/docs/hosting)
-
-This is the source for version 2+. Version 1.0, the one built with jQuery is in the [v1 branch](https://github.com/alexforsyth1/alexforsyth-portfolio/tree/v1).
+- [GitHub Pages (Hosting)](https://pages.github.com/)
 
 ### Developing
 
@@ -33,15 +31,3 @@ For production, build the site:
 ```bash
 npm run build
 ```
-
-### Contributing
-
-You can fork this repo and modify it however I wont really be accepting pull requests due to the nature of the website being based on "taste" and a showcase of my work.
-
-If you decide to use this site for your own commercial work, replace my personal logos with yours.
-
-Please don't use my personal logos as yours.
-
-### License
-
-Mozilla Public License 2.0 License.
