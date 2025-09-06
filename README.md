@@ -1,20 +1,20 @@
 # <img src="banner.jpg" align="center" alt="banner"/>
 
-Source code for my personal portfolio, musabhassan.com
+Source code for Alex Forsyth's portfolio website
 
-[![Visit Live Site](https://img.shields.io/badge/Visit%20Live%20Site-222224?style=for-the-badge)](https://musabhassan.com)
+[![Visit Live Site](https://img.shields.io/badge/Visit%20Live%20Site-222224?style=for-the-badge)](https://alexforsyth.com)
 
 ### Source Information
 
 This website is built with
 
 - [SvelteKit (Frontend Framework)](https://kit.svelte.dev/)
-- [Slickscroll (Scroll Effects)](https://github.com/Musab-Hassan/slickscrolljs)
+- [Slickscroll (Scroll Effects)](https://github.com/alexforsyth1/slickscrolljs)
 - [Anime (Animations)](https://github.com/juliangarnier/anime)
 - [Three.js (3D Effects)](https://github.com/mrdoob/three.js/)
 - [Firebase (Hosting)](https://firebase.google.com/docs/hosting)
 
-This is the source for version 2+. Version 1.0, the one built with jQuery is in the [v1 branch](https://github.com/Musab-Hassan/musabhassan.com/tree/v1).
+This is the source for version 2+. Version 1.0, the one built with jQuery is in the [v1 branch](https://github.com/alexforsyth1/alexforsyth-portfolio/tree/v1).
 
 ### Developing
 

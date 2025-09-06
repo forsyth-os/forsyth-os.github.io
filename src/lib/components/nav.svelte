@@ -57,18 +57,7 @@
 
 {#await loadPagePromise then _}
 	<div class="nav-wrapper" style="transform: translate(0px);">
-		<!-- Logo -->
-		<div class="flex-wrapper ico" style="z-index: 21;">
-			<button class="interactive clickable"
-				onclick={() => navigate(scrollAnchorState.home!)}>
 
-				<img src="assets/imgs/logo.svg"
-					class="logo-icon"
-					alt="Logo"
-					draggable="false"
-					use:introAnimation={{ delay: 1000 }}>
-			</button>
-		</div>
 		
 		<div class="flex-wrapper">
 			<!-- Mobile and desktop nav menu -->
@@ -100,10 +89,10 @@
 							</button>
 						</li>
 						<li class="mobile">
-							<a href="mailto:musab@musabhassan.com" target="_blank" in:mobileTransitionSwitcher={{ delay: 350 }}>Contact</a>
+							<a href="mailto:alexforsyth2@gmail.com" target="_blank" in:mobileTransitionSwitcher={{ delay: 350 }}>Contact</a>
 						</li>
 						<li use:introAnimation={{ delay: 1300 }}>
-							<a href="https://github.com/Musab-Hassan" target="_blank" in:mobileTransitionSwitcher={{ delay: 400 }}>Github</a>
+							<a href="https://www.linkedin.com/in/alexforsyth1" target="_blank" in:mobileTransitionSwitcher={{ delay: 400 }}>LinkedIn</a>
 						</li>
 					{/key}
 				</ul>
@@ -151,22 +140,7 @@ button.interactive
 	justify-content: space-between
 	align-items: center
 
-	.flex-wrapper.ico
-		overflow: hidden
-		height: 6vh
-		width: 7vh
-		mix-blend-mode: exclusion
-		cursor: pointer
 
-		*
-			width: 100%
-			height: 100%
-
-		.logo-icon
-			position: relative
-			display: inline-block
-			height: 100%
-			width: 100%
 
 	@media only screen and (min-width: 950px)
 		ul.nav-list

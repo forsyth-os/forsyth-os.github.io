@@ -1,91 +1,82 @@
 [
     {
-        "id": "marymount",
-        "title": "Marymount Paris",
+        "id": "project1",
+        "title": "Accelerator Target Slider",
         "details": {
-            "description": "An enterprise grade dyanamic full stack application with a content management system for the Marymount International School, Paris.",
-            "summary": "Web Application"
+            "description": "An automated, temperature controlled, and actuated stage for irradiating universal sample types sequentially.",
+            "summary": "Mechatronic Design Project"
         },
         "roles": [
-            "UI/UX Designer",
-            "Full-Stack Developer"
+            "Project Lead",
+            "CAD Design & Drafting",
+            "Thermal & Electrical Testing",
+            "Control System Design"
         ],
         "links": [
             {
                 "type": "web",
-                "text": "Visit Site",
-                "link": "https://marymount.fr"
+                "text": "View Project",
+                "link": "/work/project1"
             }
         ]
     },
     {
-        "id": "lcml",
-        "title": "Life-Cycle Managment Laboratory",
+        "id": "project2",
+        "title": "Self-Playing Chess Board",
         "details": {
-            "description": "A single page web application for managing research and administrative content for LCML at the University of British Columbia",
-            "summary": "Web Application"
+            "description": "An electromagenet housed on a 2D gantry that playes moves instructed by a custom programmmed chess engine. Move detection is accomplished with a reed switch array and gameplay via API connected react webiste",
+            "summary": "Mechatronic Design Project"
         },
         "roles": [
-            "UI/UX Designer",
-            "Full-Stack Web Developer"
-        ]
-    },
-    {
-        "id": "v1",
-        "title": "Portfolio v1",
-        "details": {
-            "description": "My personal portfolio website with a full showcase of previous featured projects. Received the Awwwards Honorable Mention.",
-            "summary": "Personal Portfolio"
-        },
-        "date": "May 2021",
-        "roles": [
-            "UI/UX Designer",
-            "Front-end Web Developer"
+            "CAD Design & Drafting",
+            "Circuit Design & Signal Processing",
+            "Control System Design"
         ],
         "links": [
             {
                 "type": "web",
-                "text": "Visit Site",
-                "link": "https://v1.musabhassan.com"
+                "text": "View Project",
+                "link": "/work/project2"
             }
         ]
     },
     {
-        "id": "kic",
-        "title": "Kelowna Islamic Center",
+        "id": "project3",
+        "title": "Optimized Brake Pedal",
         "details": {
-            "description": "A multi-platform community platform consisting of mobile apps, a web app, and server-side solutions for Kelowna Islamic Center.",
-            "summary": "Multi-platform Solutions"
+            "description": "Lightweight breakpedal optimzed with FEA analysis for the BAJA offroad racing team",
+            "summary": "Mechanical Design Project"
         },
         "roles": [
-            "UI/UX Designer",
-            "Mobile Developer",
-            "Full-Stack Developer"
+            "Project Lead",
+            "CAD Design",
+            "Stress & Strain FEA Analysis"
         ],
         "links": [
             {
-                "type": "android",
-                "text": "View on Google Play",
-                "link": "https://play.google.com/store/apps/details?id=com.kelownamasjid.android.app"
-            },
-            {
-                "type": "ios",
-                "text": "View on App Store",
-                "link": "https://apps.apple.com/us/app/kelowna-islamic-center/id1479503537?ls=1"
+                "type": "web",
+                "text": "View Project",
+                "link": "/work/project3"
             }
         ]
     },
     {
-        "id": "grillzzy",
-        "title": "Grillzzy Foods",
+        "id": "project4",
+        "title": "Primary CVT Transmission",
         "details": {
-            "description": "Iconography, branding, and website for a Canadian meat and manufacturing processing start-up",
-            "summary": "Brand Website"
+            "description": "Remodelled the primary CVT transmission allowing the engagement mechanism to keep engine RPM within max-power band.",
+            "summary": "Mechanical Design Project"
         },
         "roles": [
-            "Brand Designer",
-            "Web Designer",
-            "Front-End Web Developer"
+            "CAD Design & Drafting",
+            "MATLAB Simulation"
+        ],
+        "links": [
+            {
+                "type": "web",
+                "text": "View Project",
+                "link": "/work/project4"
+            }
         ]
     }
 ]

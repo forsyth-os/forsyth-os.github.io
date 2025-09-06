@@ -44,6 +44,11 @@ export class SliderImageMesh extends ImageMesh {
 
         this.speed = workScrollState.speed;
         this.uniforms.uOffset!.value.set(this.speed * -0.0003, Math.abs(this.speed * 0.00005)); // Warping and Distortion effect
-        this.uniforms.uTime!.value = this.clock.getElapsedTime() * 0.8;
+        
+        // Only apply time-based distortion when there's movement (prevents static waving)
+        if (Math.abs(this.speed) > 0.1) {
+            this.uniforms.uTime!.value = this.clock.getElapsedTime() * 0.8;
+        }
+        // Keep the time uniform stable when not moving to prevent static waving
     }
 }

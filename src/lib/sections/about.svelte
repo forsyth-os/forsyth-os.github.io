@@ -50,19 +50,20 @@
 	{#await sectionOnePromise then _}
 		<div class="content-wrapper">
 			<h1 class="title" use:titleIn>
-				Hey I'm <br>Musab
+				Hey I'm <br>Alex
 			</h1>
 			<div in:maskSlideIn={{ duration: 1200, reverse: true, delay: 150 }}>
 				<p class="paragraph">
-					I'm a web developer from British Columbia, Canada. I specialize in designing and developing web experiences<br><br>I work with organizations and individuals to create beautiful, responsive, and scalable web products tailor-made for them. Think we can make something great together? Let's talk over email.
-				</p>
+					I am a third year mechanical engineering student at Queen's university with a focus in mechatronic design and control systems.<br><br>
+					I am currently working part time as a project lead at RMTL to implement the accelerator target slider, and in the pre seed stage to co-found a low feild MRI project.<br><br>
+					I'm always looking for innovative projects with hardworking people, feel free to reach out! 
 			</div>
 			<div class="social-button-wrapper">
 				<div in:maskSlideIn={{ delay: 400, reverse: true }}>
-					<span class="button"><a href="mailto:musab@musabhassan.com" target="_blank" class="clickable sublink link">Email Me</a></span>
+					<span class="button"><a href="mailto:alexforsyth2@gmail.com" target="_blank" class="clickable sublink link">Email Me</a></span>
 				</div>
 				<div in:maskSlideIn={{ delay: 700, reverse: true }}>
-					<span class="button"><a href="https://github.com/Musab-Hassan" target="_blank" class="clickable sublink link">Github</a></span>
+					<span class="button"><a href="https://www.linkedin.com/in/alexforsyth1" target="_blank" class="clickable sublink link">LinkedIn</a></span>
 				</div>
 			</div>
 		</div>
@@ -75,7 +76,7 @@
 						{ property: "width", value: "100%"},
 						{ property: "height", value: "100%"}
 					]
-				}} alt="Musab's Profile" class="profile-pic">
+				}} alt="Alex's Profile" class="profile-pic">
 			{/await}
 		</div>
 	{/await}
@@ -91,56 +92,26 @@
 			</li>
 			<li>
 				<div in:letterSlideIn={{ initDelay: 550 }}>
-					Front-end
-				</div>
-				<div 
-					class="flex-item" 
-					in:maskSlideIn={{ delay: 600 }}>
-					<img src="assets/imgs/svg-icons/svelte.svg" alt="Svelte">
-					<img src="assets/imgs/svg-icons/react.svg" alt="React">
+					SolidWorks CAD
 				</div>
 			</li>
 			<li>
 				<div in:letterSlideIn={{ initDelay: 650 }}>
-					Back-end
-				</div>
-				<div class="flex-item" in:maskSlideIn={{ delay: 700 }}>
-					<img src="assets/imgs/svg-icons/nodejs.svg" alt="node js">
-					<img src="assets/imgs/svg-icons/php.svg" alt="php">
+					Simulations (FEA/CFD)
 				</div>
 			</li>
 			<li>
 				<div in:letterSlideIn={{ initDelay: 750 }}>
-					Dev-ops
-				</div>
-				<div class="flex-item" in:maskSlideIn={{ delay: 800 }}>
-					<img src="assets/imgs/svg-icons/firebase.svg" alt="Firebase">
-					<img src="assets/imgs/svg-icons/gcp.svg" alt="Google Cloud Platform">
+					Control Systems (LabVIEW/Python)
 				</div>
 			</li>
 			<li>
 				<div in:letterSlideIn={{ initDelay: 850 }}>
-					Mobile
-				</div>
-				<div class="flex-item" in:maskSlideIn={{ delay: 900 }}>
-					<img src="assets/imgs/svg-icons/flutter.svg" alt="flutter">
-					<img src="assets/imgs/svg-icons/android.svg" alt="native android">
-					<img src="assets/imgs/svg-icons/iOS.svg" alt="native ios">
+					Electrical Schematics (KiCAD)
 				</div>
 			</li>
 		</ul>
-		<ul class="list">
-			<li class="list-title">
-				<div in:letterSlideIn={{ initDelay: 400 }}>
-					awards
-				</div>
-			</li>
-			<li>
-				<div in:letterSlideIn={{ initDelay: 550 }}>
-					1x — Awwwards Honors
-				</div>
-			</li>
-		</ul>
+
 	{/await}
 </div>
 
@@ -162,13 +133,13 @@
 	padding-bottom: 5vh
 
 	.profile-image
-		width: 55%
+		width: 65%
 		overflow: hidden
-		margin-top: -40vh
+		margin-top: -50vh
 		position: relative
 
 		img
-			height: 80%
+			height: 55%
 			width: 90%
 			border-radius: 0.5vh
 			object-fit: cover

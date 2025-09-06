@@ -3,7 +3,7 @@
 	import { getGPUTier } from 'detect-gpu';
 	import { onMount } from "svelte";
 	import { fade } from "svelte/transition";
-	import { ImageRenderer } from "$lib/effects/work-slider/renderer";
+
 	import { letterSlideIn, letterSlideOut, maskSlideIn, maskSlideOut, workImageIntro, workListIntro } from "$lib/animations";
 	import { loadPagePromise } from "$lib/store";
 	import { dataState, scrollAnchorState, viewPortState, workScrollState } from "$lib/state.svelte";
@@ -107,8 +107,8 @@
 
 		listContainer.style.transform = "translate3d(0px, 0px, 0px)";
 
-		// ThreeJS warping effect if device can handle it
-		if (gpuTier.tier >= 2 && !gpuTier.isMobile && gpuTier.fps! >= 30) new ImageRenderer(container, images);
+		// ThreeJS warping effect disabled to prevent unwanted distortion
+		// if (gpuTier.tier >= 2 && !gpuTier.isMobile && gpuTier.fps! >= 30) new ImageRenderer(container, images);
 	});
 
 	// Move slider to active item when it is active
@@ -151,20 +151,30 @@
 				bind:this={listContainer} 
 				class:hold={workScrollState.active}>
 
-				<!-- Work items -->
+				<!-- ========================= WORK ITEMS (Landing page project previews) ========================= -->
+				<!-- Edit data like title/summary/roles/links in static/data/work-data.json -->
+				<!-- Edit image files in static/assets/imgs/work-back/{project-id}/cover.png -->
 				{#each dataState.workData! as item, i}
-					<li use:workImageIntro={{ promise: inViewPromise, delay: i*30 }}>
+					<!-- === Project Block: {item.title} (id: {item.id}) =================================== -->
+					<!-- Image + Text formatting for this project's preview card lives below -->
+					<li use:workImageIntro={{ promise: inViewPromise, delay: i*30 }} data-project-id={item.id}>
 						<div class="list-item clickable passive" 
 							class:ambient="{ currentActive !== i && currentActive >= 0 }" 
 							class:active="{ currentActive === i }" 
 							bind:this={ workItems[i] }>
 
+							<!-- Project Cover Image (edit file in static/assets/imgs/work-back/{item.id}/cover.png) -->
 							<div class="img-wrapper">
-								{#await loadImage(`assets/imgs/work-back/${item.id}/cover.jpg`) then src}
+								{#await loadImage(`assets/imgs/work-back/${item.id}/cover.png`) then src}
 									<img bind:this={images[i]} src="{src}" ondragstart={(e) => {e.preventDefault()}} draggable="false" alt="{item.title} Background">
+								{:catch}
+									<div class="placeholder-image">
+										Cover Image
+									</div>
 								{/await}
 							</div>
 							{#await inViewPromise then _}
+								<!-- Project Index (01, 02, 03 ...) -->
 								<div class="text-top-wrapper" class:hidden={currentActive >= 0 || workScrollState.active}>
 									<p 
 										class="item-index"
@@ -176,6 +186,7 @@
 									</p>
 								</div>
 								
+								<!-- Project Title + View Button (title comes from work-data.json) -->
 								<div class="text-wrapper" class:hidden={currentActive >= 0 || workScrollState.active}>
 									<h1 
 										class="item-title" 
@@ -203,6 +214,7 @@
 							{/await}
 						</div>
 					</li>
+					<!-- === End Project Block: {item.title} ================================================ -->
 				{/each}
 			</ul>
 		</div>
@@ -373,7 +385,7 @@
 					position: relative
 					font-family: consts.$titleFont
 					font-size: 7vw
-					text-transform: lowercase
+					text-transform: none
 					font-weight: normal
 					word-wrap: break-word
 					white-space: normal
@@ -563,6 +575,23 @@
 					-webkit-transform: translate(-50%, -50%)
 					opacity: 0.5
 
+				.placeholder-image
+					height: 110%
+					width: 110%
+					background: #333
+					color: white
+					display: flex
+					align-items: center
+					justify-content: center
+					font-size: 2vh
+					text-align: center
+					position: absolute
+					top: 50%
+					left: 50%
+					transform: translate(-50%, -50%)
+					-webkit-transform: translate(-50%, -50%)
+					border-radius: 0.5vh
+
 			.text-top-wrapper
 				position: absolute
 				top: 6vh
@@ -604,7 +633,7 @@
 					letter-spacing: 0.1vw
 					line-height: 110%
 					word-spacing: 80vw
-					text-transform: lowercase
+					text-transform: none
 					word-wrap: break-word
 					white-space: normal
 

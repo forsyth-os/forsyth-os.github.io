@@ -1,7 +1,7 @@
 {
-	"name": "musabhassan.com",
+	"name": "alexforsyth-portfolio",
 	"author": {
-		"name": "Musab Hassan"
+		"name": "Alex Forsyth"
 	},
 	"version": "2.2.0",
 	"private": true,
@@ -10,14 +10,16 @@
 		"build": "vite build",
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"deploy": "npm run build && gh-pages -d build"
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-auto": "^6.0.0",
+		"@sveltejs/adapter-static": "^6.0.0",
 		"@sveltejs/kit": "^2.20.8",
 		"@sveltejs/vite-plugin-svelte": "^5.0.3",
 		"@types/animejs": "^3.1.13",
 		"@types/three": "^0.176.0",
+		"gh-pages": "^6.1.1",
 		"sass": "^1.87.0",
 		"svelte": "^5.28.2",
 		"svelte-check": "^4.1.6",
