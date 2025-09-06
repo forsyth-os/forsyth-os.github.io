@@ -1,6 +1,8 @@
 import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
+const dev = process.env.NODE_ENV === 'development';
+
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	// Consult https://kit.svelte.dev/docs/integrations#preprocessors
@@ -11,15 +13,15 @@ const config = {
 		adapter: adapter({
 			pages: 'build',
 			assets: 'build',
-			fallback: 'index.html',
-			precompress: false,
-			strict: false
+			fallback: null,
+			precompress: false
 		}),
-		paths: {
-			base: '',
-		},
 		prerender: {
-			handleHttpError: 'warn'
+			default: true,
+		},
+		trailingSlash: 'always',
+		paths: {
+			base: dev ? '' : '/forsyth-os.github.io',
 		}
 	}
 };

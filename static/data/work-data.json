@@ -16,7 +16,7 @@
             {
                 "type": "web",
                 "text": "View Project",
-                "link": "/work/project1"
+                "link": "/forsyth-os.github.io/work/project1/"
             }
         ]
     },
@@ -36,7 +36,7 @@
             {
                 "type": "web",
                 "text": "View Project",
-                "link": "/work/project2"
+                "link": "/forsyth-os.github.io/work/project2/"
             }
         ]
     },
@@ -56,7 +56,7 @@
             {
                 "type": "web",
                 "text": "View Project",
-                "link": "/work/project3"
+                "link": "/forsyth-os.github.io/work/project3/"
             }
         ]
     },
@@ -75,7 +75,7 @@
             {
                 "type": "web",
                 "text": "View Project",
-                "link": "/work/project4"
+                "link": "/forsyth-os.github.io/work/project4/"
             }
         ]
     }
