@@ -14,7 +14,8 @@ const config = {
 			pages: 'build',
 			assets: 'build',
 			fallback: null,
-			precompress: false
+			precompress: false,
+			strict: false
 		}),
 		paths: {
 			base: dev ? '' : '/forsyth-os.github.io',
