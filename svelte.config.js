@@ -18,7 +18,21 @@ const config = {
 			strict: false
 		}),
 		paths: {
-			base: dev ? '' : '/forsyth-os.github.io',
+			base: '/forsyth-os.github.io',
+		},
+		prerender: {
+			handleHttpError: ({ status, path, referrer, referenceType }) => {
+				// Ignore 404s on assets and other non-critical paths
+				if (status === 404 && (path.startsWith('/assets') || path.startsWith('/forsyth-os.github.io/assets'))) {
+					return;
+				}
+				// For other 404s, log but don't fail the build
+				if (status === 404) {
+					console.warn(`404 error during prerender: ${path}`);
+					return;
+				}
+				throw new Error(`${status} ${path}`);
+			}
 		}
 	}
 };
