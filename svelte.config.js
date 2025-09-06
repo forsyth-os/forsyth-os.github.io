@@ -13,8 +13,7 @@ const config = {
 			assets: 'build',
 			fallback: 'index.html',
 			precompress: false,
-			strict: false,
-			trailingSlash: 'never'
+			strict: false
 		}),
 		paths: {
 			base: '',
