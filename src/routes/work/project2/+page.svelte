@@ -96,7 +96,7 @@
 					The self playing chess board was decided upon as a personal project to gain a broad experinece across system design and control without a large expense.
 					The goal was to develop a system capable of making chess moves using an electromagent housed on a 2D gantry underneath the chess board.
 					Since this requires the peices to be magentic, chess moves can then be detected with a reed switch placed under each square and multiplexed by a microcontroller.
-					My role in this project was to deisgn all aspects responsible for physical gameplay, while my roomate programmed his own chess engine with an interactive website.
+					My role in this project was to deisgn all aspects responsible for physical gameplay, while my roomate programmed his own chess engine with an interactive website.q
 					Together, this project is capable of bringing features from chess.com inlcuding AI opponents, puzzles, and game evaluation to a physical chess board.
 				</p>
 			</div>
@@ -107,14 +107,11 @@
 			<h2>Mechanical Design</h2>
 			<div class="text-box">
 				<p>
-					The mechanical design focused on creating a precise piece manipulation system using a dual-axis gantry with stepper motors for X and Y positioning.
-					The piece gripper mechanism utilizes a servo-controlled electromagnet that can selectively pick up and place pieces based on their magnetic properties.
-					The chessboard features a grid of magnetic sensors to detect piece presence and validate moves.
-				</p>
-				<p>
-					The frame structure was designed using aluminum extrusions for rigidity while maintaining lightweight construction. 
-					Linear bearings ensure smooth motion along both axes, with belt-driven systems providing accurate positioning to within 0.5mm tolerance.
-					The entire system is mounted on a stable base with adjustable leveling feet to ensure consistent operation across different surfaces.
+					The mechanical design of the 2D gantry revolved around the dimensions of the low-cost hardware initially purchased.
+					A stacked linear guide rail design was chosen to maximize the electromagents range for a fixed box size, allowing for a larger chess board and more clearance between peices.
+					This required the development of a floating motor mount to move the magnet along the second axis, and precise tolerancing to prevent deflection of the upper rail.
+					The housings were 3D printed to reduce cost/weight and assembled with bolts to remain modular.
+
 				</p>
 			</div>
 		</section>
@@ -145,14 +142,11 @@
 			<h2>Electrical Design</h2>
 			<div class="text-box">
 				<p>
-					The electrical system integrates multiple microcontrollers to handle different aspects of the chess board operation. 
-					An Arduino Mega serves as the main controller, coordinating stepper motor movements, servo control, and sensor readings.
-					The system includes stepper motor drivers for precise positioning, servo controllers for the gripper mechanism, and a comprehensive sensor array.
-				</p>
-				<p>
-					Computer vision is implemented using a Raspberry Pi with a high-resolution camera module for piece recognition and position tracking.
-					The system communicates with a chess engine running on a separate computer via USB serial connection.
-					Safety features include limit switches, current monitoring, and emergency stop functionality to prevent damage during operation.
+					The electrical hardware design began with the layout shown below with one 12V power supply and Arduino controlling two stepper motors with limit switches.
+					Nema 17 stepper motors were proposed for their high torque and accuray without the need for sensors, however were replaced with byj steppers to reduce cost, footprint, and weight to allow for a floating motor design.
+					To account for the reduced torque, the 12V power supply was replaced with a 24V power supply utilizing A4988 current limiting motor drivers.
+					Peice detection is accomplished with an array of reed switches measured through four 16 channal analog multiplexers. 
+
 				</p>
 			</div>
 		</section>
@@ -183,14 +177,12 @@
 			<h2>Future Work</h2>
 			<div class="text-box">
 				<p>
-					Future development will focus on enhancing the system's intelligence and user experience. 
-					Advanced computer vision algorithms will be implemented to improve piece recognition accuracy and handle edge cases such as partially obscured pieces.
-					Machine learning techniques will be integrated to learn from user playing patterns and adapt the difficulty level accordingly.
-				</p>
-				<p>
-					Long-term goals include developing a mobile application for remote gameplay, implementing voice commands for move announcements,
-					and creating an online platform where multiple chess boards can compete against each other.
-					The system will also be enhanced with haptic feedback and LED indicators to provide better visual and tactile feedback during gameplay.
+					Currently, the chess board is able to move peices with the electromagnet but lacks the ability to measure where peices are on the board.
+					The remaining work inovlves calibrating the peice's magnetic feild strength to that of Electromagnet such that only the desired peice is moved along the board.
+					The reed switch sensitivity must then be matched accordingly so that it is not noised by adjacent peices causing false positive readings.
+					Additionally, a path finding algorithm on the Arduino must be developed to take positional outputs from the chess engine and find the most efficient not contacting path there.
+					Once this has been completed, the electrical circuit should move from the breadboard to a soldered perfboard and mounted in a 3D printed housing for a permanent design.
+
 				</p>
 			</div>
 		</section>
