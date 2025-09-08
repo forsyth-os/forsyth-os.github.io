@@ -84,8 +84,7 @@
 					A CVT is a type of automatic transmission that seamlessly changes through an infinite number of gear ratios within a specified range, rather than using fixed gear steps like traditional transmissions.
 					The primary advantage of a CVT is its ability to keep the engine operating at its most efficient or powerful RPM, enhancing fuel efficiency and performance.
 					This is accomplished with an engagemnet mechanism tuned to RPM by centrifugal force, composed of springs/cams. </p><p>
-					The primary goal of this project was to retune the enagagement mechanism for the new 2024 car, and update the CAD to implemenet this.
-				</p>
+					The primary goal of this project was to investigate a method of CVT tuning with MATLAB and redesign the CVT to increase manufacturability.
 			</div>
 		</section>
 
@@ -94,9 +93,9 @@
 			<h2>Redesign</h2>
 			<div class="text-box">
 				<p>
-					The redesign process began with using an open source MATLAB Simulink porgram to gather CVT performance data without requiring a dyno.
-					This led to a remodelled engagment mechanism composed of springs and cams to increase the peak torque output for the hill climb competition.
-					The CAD redesign implemented updated spring housings and new cam geometry, as well as cooling fins to help mitigate heat caused by the belt.
+					The redesign process began by implementing an open source MATLAB Simulink program to model and tune the engagement mechanism with the need of a dyno.
+					Unfortunately due to time constraints the outputes were not conclusive, but the groundwork was layed out for future use. 
+					The CAD redesign instead focused on material removal to reduce lathe time and added cooling fins to increase convection at high RPMs.
 				</p>
 			</div>
 		</section>
@@ -175,8 +174,8 @@
 
 		.project-image
 			width: 100%
-			height: 50vh
-			margin-bottom: 8vh
+			height: 55vh
+			margin-bottom: 4vh
 			border-radius: 2vh
 			overflow: hidden
 			position: relative

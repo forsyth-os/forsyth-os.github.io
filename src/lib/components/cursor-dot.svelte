@@ -14,6 +14,10 @@
 		x: 0, y: 0
 	};
 
+	// Track if we're currently hovering over a clickable element
+	let isHoveringClickable = false;
+	let lockedCenterPosition = { x: 0, y: 0 };
+
 	// onMouseMove, set current mouse coords and detect if any clickable is hovered
 	function updateMouseCoords(e: MouseEvent) {
 		// Don't do anything if its a touch mobile device
@@ -22,24 +26,29 @@
 		if (introDisabled) setTimeout(() => introDisabled = false, 200);
 
 		let cursor = window.getComputedStyle((e as any).target)["cursor"];
-		hover = (cursor === "pointer");
+		let wasHoveringClickable = isHoveringClickable;
+		isHoveringClickable = (cursor === "pointer");
+		hover = isHoveringClickable;
 
 		// Clickable transition if mouse changes to pointer
-		if (cursor === "pointer") {
-
-			let currentlyHovering: Element = document.elementFromPoint(e.clientX, e.clientY)!;
-			
-			let width = currentlyHovering.clientWidth;
-			let height = currentlyHovering.clientHeight;
-			
-			let clickableMid = {
-				x: (currentlyHovering.getBoundingClientRect().left + (width / 2)),
-				y: (currentlyHovering.getBoundingClientRect().top + (height / 2))
+		if (isHoveringClickable) {
+			// If we just started hovering, calculate and lock the center position
+			if (!wasHoveringClickable) {
+				let currentlyHovering: Element = document.elementFromPoint(e.clientX, e.clientY)!;
+				
+				let width = currentlyHovering.clientWidth;
+				let height = currentlyHovering.clientHeight;
+				
+				lockedCenterPosition = {
+					x: (currentlyHovering.getBoundingClientRect().left + (width / 2)),
+					y: (currentlyHovering.getBoundingClientRect().top + (height / 2))
+				}
 			}
-
+			
+			// Always use the locked center position when hovering
 			targetPosition = {
-				x: clickableMid.x + ((clickableMid.x - e.clientX)*0.15),
-				y: clickableMid.y + ((clickableMid.y - e.clientY)*0.15)
+				x: lockedCenterPosition.x,
+				y: lockedCenterPosition.y
 			}
 
 		// Otherwise, follow the cursor

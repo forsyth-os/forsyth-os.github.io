@@ -50,13 +50,13 @@
 	{#await sectionOnePromise then _}
 		<div class="content-wrapper">
 			<h1 class="title" use:titleIn>
-				Hey I'm <br>Alex
+				Hi, I'm <br>Alex
 			</h1>
 			<div in:maskSlideIn={{ duration: 1200, reverse: true, delay: 150 }}>
 				<p class="paragraph">
-					I am a third year mechanical engineering student at Queen's university with a focus in mechatronic design and control systems.<br><br>
-					I am currently working part time as a project lead at RMTL to implement the accelerator target slider, and in the pre seed stage to co-found a low feild MRI project.<br><br>
-					I'm always looking for innovative projects with hardworking people, feel free to reach out! 
+					I am a third year mechanical engineering student at Queen's university with a focus in mechatronic design.<br><br>
+					I am currently working part time as a project lead at the Reactor Materials Testing Laboratory (RMTL) to implement the accelerator target slider, and in the pre seed stage to co-found a low field MRI project.<br><br>
+					I'm always looking for innovative projects with driven people, feel free to reach out! 
 			</div>
 			<div class="social-button-wrapper">
 				<div in:maskSlideIn={{ delay: 400, reverse: true }}>

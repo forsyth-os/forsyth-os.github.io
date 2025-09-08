@@ -285,7 +285,10 @@
 						<div in:maskSlideIn={{ reverse: true }} out:maskSlideOut>
 							<div class="links">
 								{#each dataState.workData![currentActive].links as link}
-									<a href={link.link} target="_blank" class="button">{link.text}</a>
+									<a href={link.link} target="_blank" class="button project-link-button">
+										<span class="button-text">{link.text}</span>
+										<span class="button-arrow">↗</span>
+									</a>
 								{/each}
 							</div>
 						</div>
@@ -471,6 +474,109 @@
 						text-transform: uppercase
 						text-decoration: none
 						line-height: 160%
+						background: rgba(255, 255, 255, 0.1)
+						border: 1px solid rgba(255, 255, 255, 0.3)
+						padding: 1vh 2vw
+						border-radius: 0.5vh
+						transition: all 0.3s ease
+						position: relative
+						overflow: hidden
+						display: inline-block
+						
+						&:hover
+							background: rgba(255, 255, 255, 0.2)
+							border-color: rgba(255, 255, 255, 0.6)
+							transform: translateY(-2px)
+							box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1)
+						
+						&:active
+							transform: translateY(0px)
+						
+						&::before
+							content: ""
+							position: absolute
+							top: 0
+							left: -100%
+							width: 100%
+							height: 100%
+							background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent)
+							transition: left 0.5s ease
+						
+						&:hover::before
+							left: 100%
+					
+					.project-link-button
+						background: linear-gradient(135deg, #ffffff, #f8fafc)
+						border: 2px solid #e2e8f0
+						border-radius: 12px
+						padding: 2.2vh 2.8vw
+						position: relative
+						overflow: hidden
+						transition: all 0.3s ease
+						display: flex
+						align-items: center
+						gap: 1vw
+						font-weight: 600
+						min-height: 5.5vh
+						box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15)
+						backdrop-filter: blur(10px)
+						cursor: pointer
+						
+						&:hover
+							background: linear-gradient(135deg, #ffffff, #f1f5f9)
+							border-color: #94a3b8
+							transform: translateY(-2px)
+							box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15)
+							
+							.button-text
+								color: #1e293b
+								animation: none
+							
+							.button-arrow
+								transform: translateX(3px)
+								color: #1e293b
+						
+						&:active
+							transform: translateY(-1px)
+							transition: transform 0.1s ease
+						
+						.button-text
+							position: relative
+							z-index: 2
+							font-weight: 900
+							font-size: 1.2vw
+							letter-spacing: 0.15vw
+							color: #1a1a1a
+							text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8)
+							transition: all 0.3s ease
+							animation: textWiggle 4s ease-in-out infinite
+							
+							@keyframes textWiggle
+								0%, 85%, 100%
+									transform: translateX(0) scale(1)
+								87%
+									transform: translateX(-5px) scale(1.05)
+								89%
+									transform: translateX(5px) scale(1.05)
+								91%
+									transform: translateX(-5px) scale(1.05)
+								93%
+									transform: translateX(5px) scale(1.05)
+								95%
+									transform: translateX(-3px) scale(1.02)
+								97%
+									transform: translateX(3px) scale(1.02)
+								99%
+									transform: translateX(0) scale(1)
+						
+						.button-arrow
+							position: relative
+							z-index: 2
+							transition: all 0.3s ease
+							opacity: 0.8
+							font-size: 1.1em
+							font-weight: 600
+							color: #334155
 
 					.underline
 						display: none
@@ -492,6 +598,60 @@
 						.button
 							font-size: 2vh
 							position: relative
+							background: rgba(255, 255, 255, 0.1)
+							border: 1px solid rgba(255, 255, 255, 0.3)
+							padding: 1.2vh 3vw
+							border-radius: 0.5vh
+							transition: all 0.3s ease
+							display: inline-block
+							
+							&:hover
+								background: rgba(255, 255, 255, 0.2)
+								border-color: rgba(255, 255, 255, 0.6)
+								transform: translateY(-1px)
+								box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1)
+						
+						.project-link-button
+							background: linear-gradient(135deg, #ffffff, #f8fafc)
+							border: 2px solid #e2e8f0
+							border-radius: 10px
+							padding: 2.5vh 3.5vw
+							display: flex
+							align-items: center
+							gap: 2vw
+							font-weight: 600
+							box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15)
+							min-height: 6vh
+							cursor: pointer
+							
+							&:hover
+								background: linear-gradient(135deg, #ffffff, #f1f5f9)
+								border-color: #94a3b8
+								transform: translateY(-1px)
+								box-shadow: 0 5px 14px rgba(0, 0, 0, 0.15)
+								
+								.button-text
+									animation: none
+								
+								.button-arrow
+									transform: translateX(2px)
+									opacity: 1
+							
+							.button-text
+								font-weight: 900
+								font-size: 2.2vh
+								letter-spacing: 0.2vh
+								color: #1a1a1a
+								text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8)
+								transition: all 0.3s ease
+								animation: textWiggle 4s ease-in-out infinite
+							
+							.button-arrow
+								font-size: 1.2em
+								font-weight: 600
+								color: #334155
+								opacity: 0.8
+								transition: all 0.3s ease
 
 						.underline
 							display: inline-block

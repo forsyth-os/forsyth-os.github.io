@@ -24,8 +24,7 @@
         "id": "project2",
         "title": "Self-Playing Chess Board",
         "details": {
-            "description": "An electromagenet housed on a 2D gantry that playes moves instructed by a custom programmmed chess engine. Move detection is accomplished with a reed switch array and gameplay via API connected react webiste",
-            "summary": "Mechatronic Design Project"
+            "description": "An electromagenet housed on a 2D gantry that playes moves instructed by a custom programmmed chess engine."
         },
         "roles": [
             "CAD Design & Drafting",

@@ -96,7 +96,7 @@
 					The self playing chess board was decided upon as a personal project to gain a broad experinece across system design and control without a large expense.
 					The goal was to develop a system capable of making chess moves using an electromagent housed on a 2D gantry underneath the chess board.
 					Since this requires the peices to be magentic, chess moves can then be detected with a reed switch placed under each square and multiplexed by a microcontroller.
-					My role in this project was to deisgn all aspects responsible for physical gameplay, while my roomate programmed his own chess engine with an interactive website.q
+					My role in this project was to deisgn all aspects responsible for physical gameplay, while my roomate programmed his own chess engine with an interactive website.
 					Together, this project is capable of bringing features from chess.com inlcuding AI opponents, puzzles, and game evaluation to a physical chess board.
 				</p>
 			</div>
@@ -116,34 +116,14 @@
 			</div>
 		</section>
 
-		<!-- MECHANICAL DESIGN IMAGE -->
-		<section class="project-images" in:maskSlideIn={{ duration: 1200, delay: 500, reverse: true }}>
-			<div class="image-container">
-				{#if isClient}
-					{#await loadImage("/assets/imgs/work-back/project2/mechanical.png") then src}
-						<img src="{src}" alt="Mechanical Design" class="project-detail-pic">
-					{:catch error}
-						<div class="placeholder-image">
-							<!-- ADD YOUR IMAGE: Place mechanical.png in static/assets/imgs/work-back/project2/ -->
-							Mechanical Design Image<br>
-							<small>Error: {error?.message || 'Image not found'}</small>
-						</div>
-					{/await}
-				{:else}
-					<div class="placeholder-image">
-						Loading...
-					</div>
-				{/if}
-			</div>
-		</section>
 
 		<!-- ELECTRICAL DESIGN TEXT BOX -->
-		<section bind:this={electricalSection} class="hello-world" in:maskSlideIn={{ duration: 1200, delay: 600, reverse: true }}>
+		<section bind:this={electricalSection} class="hello-world" in:maskSlideIn={{ duration: 1200, delay: 500, reverse: true }}>
 			<h2>Electrical Design</h2>
 			<div class="text-box">
 				<p>
 					The electrical hardware design began with the layout shown below with one 12V power supply and Arduino controlling two stepper motors with limit switches.
-					Nema 17 stepper motors were proposed for their high torque and accuray without the need for sensors, however were replaced with byj steppers to reduce cost, footprint, and weight to allow for a floating motor design.
+					Nema 17 stepper motors were proposed for their high torque and accuray without the need for sensors, however were replaced with BYJ steppers to reduce cost, footprint, and weight to allow for a floating motor design.
 					To account for the reduced torque, the 12V power supply was replaced with a 24V power supply utilizing A4988 current limiting motor drivers.
 					Peice detection is accomplished with an array of reed switches measured through four 16 channal analog multiplexers. 
 
@@ -152,7 +132,7 @@
 		</section>
 
 		<!-- ELECTRICAL DESIGN IMAGE -->
-		<section class="project-images" in:maskSlideIn={{ duration: 1200, delay: 700, reverse: true }}>
+		<section class="project-images" in:maskSlideIn={{ duration: 1200, delay: 600, reverse: true }}>
 			<div class="image-container">
 				{#if isClient}
 					{#await loadImage("/assets/imgs/work-back/project2/image2.png") then src}
@@ -173,7 +153,7 @@
 		</section>
 
 		<!-- FUTURE WORK TEXT BOX -->
-		<section bind:this={futureSection} class="hello-world" in:maskSlideIn={{ duration: 1200, delay: 800, reverse: true }}>
+		<section bind:this={futureSection} class="hello-world" in:maskSlideIn={{ duration: 1200, delay: 700, reverse: true }}>
 			<h2>Future Work</h2>
 			<div class="text-box">
 				<p>
