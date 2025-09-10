@@ -55,7 +55,7 @@
 			<div in:maskSlideIn={{ duration: 1200, reverse: true, delay: 150 }}>
 				<p class="paragraph">
 					I am a third year mechanical engineering student at Queen's university with a focus in mechatronic design.<br><br>
-					I am currently working part time as a project lead at the Reactor Materials Testing Laboratory (RMTL) to implement the accelerator target slider, and in the pre seed stage to co-found a low field MRI project.<br><br>
+					I am currently working part time as a project lead at the Reactor Materials Testing Laboratory (RMTL) to implement and test the Accelerator Target Slider (ATS).<br><br>
 					I'm always looking for innovative projects with driven people, feel free to reach out! 
 			</div>
 			<div class="social-button-wrapper">

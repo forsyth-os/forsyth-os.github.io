@@ -93,7 +93,7 @@
 			<h2>Redesign</h2>
 			<div class="text-box">
 				<p>
-					The redesign process began by implementing an open source MATLAB Simulink program to model and tune the engagement mechanism with the need of a dyno.
+					The redesign process began by implementing an open source MATLAB Simulink program to model and tune the engagement mechanism without the need of a dyno.
 					Unfortunately due to time constraints the outputes were not conclusive, but the groundwork was layed out for future use. 
 					The CAD redesign instead focused on material removal to reduce lathe time and added cooling fins to increase convection at high RPMs.
 				</p>
