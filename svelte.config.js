@@ -18,7 +18,7 @@ const config = {
 			strict: false
 		}),
 		paths: {
-			base: '/forsyth-os.github.io',
+			base: dev ? '' : '/forsyth-os.github.io',
 		},
 		prerender: {
 			handleHttpError: ({ status, path, referrer, referenceType }) => {

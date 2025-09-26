@@ -6,16 +6,15 @@
 	import { devMsg, fetchJsonData } from "$lib/utils";
 	import HomeSection from "$lib/sections/home.svelte";
 	import WorkSection from "$lib/sections/work.svelte";
-	import AboutSection from "$lib/sections/about.svelte";
-	import NavComponent from "$lib/components/nav.svelte"
-	import Footer from "$lib/components/footer.svelte";
+    import NavComponent from "$lib/components/nav.svelte"
 	import CursorDot from "$lib/components/cursor-dot.svelte"
 	import Loader from "$lib/components/loader.svelte";
-    import { dataState, viewPortState } from "$lib/state.svelte";
+    import { dataState, viewPortState, scrollAnchorState } from "$lib/state.svelte";
 
 	let scrollContainer: HTMLElement = $state()!;
 	let navBar: HTMLElement = $state()!;
-	let loading: boolean = $state(true);
+    let loading: boolean = $state(true);
+    let bottomSpacer: HTMLElement = $state()!;
 
 	onMount(async () => {
 		// Disable scrolling on initial load
@@ -42,9 +41,12 @@
 			]
 		});
 
-		// Enable scrolling
-		scrollContainer.style.overflowX = "hidden";
-		scrollContainer.style.overflowY = "auto";
+        // Enable scrolling
+        scrollContainer.style.overflowX = "hidden";
+        scrollContainer.style.overflowY = "auto";
+
+		// Keep a small fixed spacer so page ends shortly after Work
+		bottomSpacer.style.height = `12vh`;
 	});
 
 </script>
@@ -64,9 +66,8 @@
 	</div>
 	<!-- page sections -->
 	<HomeSection></HomeSection>
-	<WorkSection></WorkSection>
-	<AboutSection></AboutSection>
-	<Footer></Footer>
+    <WorkSection></WorkSection>
+    <div id="scroll-end-spacer" bind:this={bottomSpacer}></div>
 </div>
 
 
@@ -103,6 +104,10 @@
 	height: 100vh
 	position: relative
 	overflow: hidden auto
+
+#scroll-end-spacer
+	width: 100%
+	height: 0
 
 #nav-bar
 	position: fixed

@@ -1,6 +1,7 @@
 <script lang="ts">
 
-	import { getGPUTier } from 'detect-gpu';
+import { getGPUTier } from 'detect-gpu';
+import { base } from '$app/paths';
 	import { onMount } from "svelte";
 	import { fade } from "svelte/transition";
 
@@ -17,7 +18,7 @@
 	let workItems: HTMLElement[] = []; // Array of workItems to be animated
 
 	let breakTitleWords: boolean = false;
-	let currentActive: number = -1; // The work item to expand
+	let currentActive: number = -1; // The work item to expand (disabled)
 
 	let inViewResolve: (_: boolean) => void;
 	const inViewPromise: Promise<boolean> = new Promise((resolve) => {
@@ -113,8 +114,8 @@
 
 	// Move slider to active item when it is active
 	function toggleActiveItem(i: number) {
-		currentActive = (currentActive == i) ? -1 : i;
-		if (currentActive >= 0) slider.targetPosition = -(workItems[i].offsetLeft - (window.innerWidth / 4) + window.innerWidth / 10);
+		// disabled: overlay removed in favor of direct links
+		currentActive = -1;
 	}
 
 	function titleSlide(node: HTMLElement) {
@@ -200,16 +201,18 @@
 										</span>
 									</h1>
 
-									<button 
-										class="button item-link interactive"
-										onclick={() => toggleActiveItem(i)}
-										in:maskSlideIn={{
-											duration: 900,
-											delay: (i*30)+450,
-											reverse: true
-										}}>
-										view
-									</button>
+						<a 
+							class="button item-link interactive"
+							href={`${base}/work/${item.id}`}
+							onmousedown={(e) => e.stopPropagation()}
+							onclick={(e) => e.stopPropagation()}
+							in:maskSlideIn={{
+								duration: 900,
+								delay: (i*30)+450,
+								reverse: true
+							}}>
+							view
+						</a>
 								</div>
 							{/await}
 						</div>
@@ -219,83 +222,18 @@
 			</ul>
 		</div>
 
-		<!-- Active work item details (When a work item is clicked) -->
-		{#if currentActive !== -1}
-			<div class="details-container">
-				<div class="wrapper">
-					<div class="top-align">
-						<div class="wrapper">
-							<div class="index">
-								<div in:maskSlideIn={{ reverse: true }} out:maskSlideOut>
-									{#if (currentActive < 9)}
-										{"0"+(currentActive+1)}
-									{:else}
-										{currentActive+1}
-									{/if}
-								</div>
-							</div>
-							<span class="line" transition:fade></span>
-							<h6 class="caption">
-								<div in:maskSlideIn={{ reverse: true }} out:maskSlideOut>{dataState.workData![currentActive].details.summary}</div>
-							</h6>
-						</div>
-					</div>
-					
-					<div class="mid-align">
-						<h1 class="title" 
-							use:titleSlide
-							out:letterSlideOut
-							class:breakTitleWords
-							onintroend={() => setTimeout(() => breakTitleWords = true, 100)}
-							onoutrostart={() => setTimeout(() => breakTitleWords = false, 100)}>
-
-							{dataState.workData![currentActive].title}
-						</h1>
-						<button class="close-button-wrapper interactive" onclick={() => toggleActiveItem(currentActive)}>
-							<div 
-								class ="close-button"
-								in:maskSlideIn={{ reverse: true }} 
-								out:maskSlideOut>
-
-								&times;
-							</div>
-						</button>
-					</div>
-					
-					<div class="bottom-align">
-						<div>
-							<div in:maskSlideIn={{ reverse: true }} out:maskSlideOut>
-								<p class="paragraph">
-									{dataState.workData![currentActive].details.description}
-								</p>
-							</div>
-						</div>
-						<div class="roles">
-							<div class="wrapper">
-								<div in:maskSlideIn={{reverse: true}} out:maskSlideOut>
-									<p class="descriptor">Role</p>
-								</div>
-								<ul in:maskSlideIn={{ reverse: true, delay: 100 }} out:maskSlideOut>
-									{#each dataState.workData![currentActive].roles as role}
-										<li>{"+ " + role}</li>
-									{/each}
-								</ul>
-							</div>
-						</div>
-						<div in:maskSlideIn={{ reverse: true }} out:maskSlideOut>
-							<div class="links">
-								{#each dataState.workData![currentActive].links as link}
-									<a href={link.link} target="_blank" class="button project-link-button">
-										<span class="button-text">{link.text}</span>
-										<span class="button-arrow">↗</span>
-									</a>
-								{/each}
-							</div>
-						</div>
-					</div>
-				</div>
+		<!-- Active work item details removed -->
+		{#if false}{/if}
+		
+		<!-- Scroll indicator for horizontal project navigation -->
+		<div class="scroll-indicator" in:maskSlideIn={{ duration: 1200, delay: 800, reverse: true }}>
+			<div class="scroll-arrow">
+				{#await loadImage("assets/imgs/scroll_arrow.png") then src}
+					<img src="{src}" alt="Scroll right to see more projects">
+				{/await}
 			</div>
-		{/if}
+			<div class="scroll-text">scroll</div>
+		</div>
 	</div>
 </div>
 
@@ -306,7 +244,7 @@
 @include consts.textStyles()
 
 #content-container.work-click-area
-	margin-top: 30vh
+	margin-top: 12vh
 
 #content-container.work-click-area .content-wrapper
 	display: flex
@@ -687,8 +625,8 @@
 			display: inline-flex
 			justify-content: flex-end
 			overflow: hidden
-			height: 55vh
-			width: 23vw
+			height: 49.5vh
+			width: 25.2vw
 			box-sizing: border-box
 			position: relative
 			overflow: hidden
@@ -701,8 +639,8 @@
 				-webkit-transition: opacity 0.3s ease
 
 			&.active
-				height: 60vh
-				width: 50vw
+				height: 54vh
+				width: 49.5vw
 				margin-right: 16vw
 				margin-left: 10vw
 
@@ -720,13 +658,13 @@
 				height: 100%
 				z-index: 1
 				position: relative
-				width: 85%
-				margin-right: 15%
+				width: 95%
+				margin-right: 5%
 				box-shadow: 3px 9px 18px rgba(0, 0, 0, 0.2)
 				
 				img
-					height: 110%
-					width: 110%
+					height: 100%
+					width: 100%
 					object-fit: cover
 					position: absolute
 					top: 50%
@@ -773,7 +711,7 @@
 				flex-direction: column
 				justify-content: flex-end
 				position: absolute
-				bottom: 10vh
+				bottom: 6vh
 				right: 0
 				text-align: right
 				z-index: 2
@@ -808,11 +746,11 @@
 
 		@media only screen and (max-width: 1450px)
 			.list-item
-				width: 25vw
+				width: 27vw
 
 		@media only screen and (max-width: 1110px)
 			.list-item
-				width: 40vw
+				width: 43.2vw
 
 				.text-top-wrapper
 					.item-index
@@ -829,12 +767,53 @@
 
 		@media only screen and (max-width: 650px)
 			.list-item
-				width: 75vw
+				width: 76.5vw
 
 				.text-wrapper
 					width: calc(70vw - 10vh)
 
 					.item-title
 						font-size: 4.5vh
+
+	.scroll-indicator
+		position: absolute
+		bottom: 8vh
+		left: 8vw
+		display: flex
+		flex-direction: row
+		align-items: center
+		z-index: 10
+		pointer-events: none
+
+		.scroll-arrow
+			overflow: hidden
+			height: 2vh
+			margin-left: 1.5vh
+			order: 2
+
+			img
+				height: 2.3vh
+				animation: scrollArrowHorizontal 3s ease infinite
+
+		.scroll-text
+			font-size: 2vh
+			letter-spacing: 0.5vh
+			font-family: consts.$font
+			text-transform: uppercase
+			color: white
+			order: 1
+
+	@keyframes scrollArrowHorizontal
+		0%
+			transform: translateX(-120%) rotate(-90deg)
+		
+		30%
+			transform: translateX(0%) rotate(-90deg)
+		
+		70%
+			transform: translateX(0%) rotate(-90deg)
+		
+		100%
+			transform: translateX(120%) rotate(-90deg)
 
 </style>

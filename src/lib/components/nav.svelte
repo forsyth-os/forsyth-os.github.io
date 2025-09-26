@@ -1,9 +1,10 @@
 <script lang="ts">
 
-	import { animate } from "animejs";
-	import { loadPagePromise } from "$lib/store";
-	import { maskSlideIn } from "$lib/animations";
-	import { browser } from "$app/environment";
+import { animate } from "animejs";
+import { loadPagePromise } from "$lib/store";
+import { maskSlideIn } from "$lib/animations";
+import { browser } from "$app/environment";
+import { base } from "$app/paths";
     import { scrollAnchorState } from "$lib/state.svelte";
 	interface Props {
 		// Scroll container to allow scrolling when anchors are clicked
@@ -80,6 +81,7 @@
 								<p>Work</p>
 							</button>
 						</li>
+					{#if scrollAnchorState.about}
 						<li use:introAnimation={{ delay: 1200 }}>
 							<button 
 								class="interactive clickable"
@@ -88,12 +90,19 @@
 								About
 							</button>
 						</li>
+					{/if}
+					<li use:introAnimation={{ delay: 1250 }}>
+						<a href={`${base}/assets/imgs/CV.pdf`} target="_blank" in:mobileTransitionSwitcher={{ delay: 320 }}>CV</a>
+					</li>
+					<li use:introAnimation={{ delay: 1300 }}>
+						<a href={`${base}/assets/imgs/Reference.pdf`} target="_blank" in:mobileTransitionSwitcher={{ delay: 340 }}>Reference</a>
+					</li>
 						<li class="mobile">
 							<a href="mailto:alexforsyth2@gmail.com" target="_blank" in:mobileTransitionSwitcher={{ delay: 350 }}>Contact</a>
 						</li>
-						<li use:introAnimation={{ delay: 1300 }}>
-							<a href="https://www.linkedin.com/in/alexforsyth1" target="_blank" in:mobileTransitionSwitcher={{ delay: 400 }}>LinkedIn</a>
-						</li>
+					<li use:introAnimation={{ delay: 1350 }}>
+						<a href="https://www.linkedin.com/in/alexforsyth1" target="_blank" in:mobileTransitionSwitcher={{ delay: 400 }}>LinkedIn</a>
+					</li>
 					{/key}
 				</ul>
 			</div>
