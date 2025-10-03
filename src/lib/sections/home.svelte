@@ -154,10 +154,16 @@
 			Simulations (FEA/CFD)
 		</li>
 		<li>
-			Control Systems (LabVIEW/Python)
+			Control Systems (LabVIEW/Arduino C++)
 		</li>
 		<li>
 			Electrical Schematics (KiCAD)
+		</li>
+		<li>
+			Performance Testing (DAQ & Signal Processing)
+		</li>
+		<li>
+			Data Analysis (Python/MATLAB)
 		</li>
 	</ul>
 </div>

@@ -488,7 +488,7 @@
 
 		.project-logo
 			position: absolute
-			left: -12vw
+			left: -8vw
 			top: 50%
 			transform: translateY(-50%)
 			z-index: 1
