@@ -228,14 +228,14 @@
 
 			.occupation
 				position: relative
-				margin-top: 8vh
+				margin-top: 10vh
 
 				.paragraph
 					color: white
 					font-size: 2.2vh
 
 			.action-mask
-				margin-top: 10vh
+				margin-top: 8vh
 				margin-right: 7vw
 				display: inline-flex
 				overflow: hidden
@@ -295,11 +295,11 @@
 
 .expertise-container
 	position: fixed
-	right: 3vw
-	top: 12vh
+	right: 2vw
+	top: 15vh
 	height: 73vh
 	display: flex
-	align-items: center
+	align-items: Center
 	z-index: 10
 	width: 25vw
 	min-width: 300px
@@ -315,7 +315,7 @@
 
 		li.list-title
 			letter-spacing: 0.6vh
-			font-size: 2vh
+			font-size: 2.0vh
 			font-weight: bold
 			color: white
 			margin-bottom: 1vh
@@ -324,13 +324,15 @@
 			font-family: consts.$font
 			text-transform: uppercase
 			font-size: 2.0vh
-			letter-spacing: 0.5vh
-			padding: 2vh 0
+			letter-spacing: 0.4vh
+			padding: 2.5vh 0.5vw
 			border-bottom: 1px solid rgba(255, 255, 255, 0.3)
 			color: white
 			display: flex
 			flex-direction: column
 			align-items: flex-end
+			width: 100%
+			position: relative
 
 @media only screen and (min-width: 1250px)
 	.h-signature
