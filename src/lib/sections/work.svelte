@@ -175,18 +175,6 @@ import { base } from '$app/paths';
 								{/await}
 							</div>
 							{#await inViewPromise then _}
-								<!-- Project Index (01, 02, 03 ...) -->
-								<div class="text-top-wrapper" class:hidden={currentActive >= 0 || workScrollState.active}>
-									<p 
-										class="item-index"
-										in:maskSlideIn={{
-											delay: (i*30)+100,
-											reverse: true
-										}}>
-										{(i.toString().length > 1) ? (i+1) : "0"+(i+1).toString()}
-									</p>
-								</div>
-								
 								<!-- Project Title + View Button (title comes from work-data.json) -->
 								<div class="text-wrapper" class:hidden={currentActive >= 0 || workScrollState.active}>
 									<h1 
@@ -232,7 +220,7 @@ import { base } from '$app/paths';
 					<img src="{src}" alt="Scroll right to see more projects">
 				{/await}
 			</div>
-			<div class="scroll-text">scroll</div>
+			<div class="scroll-text">Drag & Scroll</div>
 		</div>
 	</div>
 </div>

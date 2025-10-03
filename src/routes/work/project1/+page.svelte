@@ -56,33 +56,12 @@
 
 		<!-- PROJECT HEADER -->
 		<header class="project-header">
-			<div class="header-content">
-				<div class="title-section">
-					<h1 class="project-title" in:maskSlideIn={{ duration: 1200, delay: 150, reverse: true }}>
-						Accelerator Target Slider
-					</h1>
-					<p class="project-subtitle" in:maskSlideIn={{ duration: 1200, delay: 200, reverse: true }}>
-						Mechatronic & Control System Design
-					</p>
-				</div>
-				<div class="project-logo" in:maskSlideIn={{ duration: 1200, delay: 280, reverse: true }}>
-					{#if isClient}
-						{#await loadImage("/assets/imgs/work-back/project1/logo.png") then src}
-							<img src="{src}" alt="Project Logo" class="logo-image">
-						{:catch error}
-							<div class="placeholder-logo">
-								<!-- ADD YOUR LOGO: Place logo.png in static/assets/imgs/work-back/project1/ -->
-								Project Logo<br>
-								<small>Error: {error?.message || 'Logo not found'}</small>
-							</div>
-						{/await}
-					{:else}
-						<div class="placeholder-logo">
-							Loading...
-						</div>
-					{/if}
-				</div>
-			</div>
+			<h1 class="project-title" in:maskSlideIn={{ duration: 1200, delay: 150, reverse: true }}>
+				Accelerator Target Slider
+			</h1>
+			<p class="project-subtitle" in:maskSlideIn={{ duration: 1200, delay: 200, reverse: true }}>
+				Mechatronic & Control System Design
+			</p>
 		</header>
 
 		<!-- PROJECT COVER IMAGE -->
@@ -464,55 +443,17 @@
 			margin-bottom: 5.6vh
 			margin-top: 2vh
 
-			.header-content
-				display: flex
-				align-items: center
-				justify-content: center
-				position: relative
+			.project-title
+				font-size: 8vh
+				color: white
+				margin: 0 0 2vh 0
 
-			.title-section
-				text-align: center
-				z-index: 2
-
-				.project-title
-					font-size: 8vh
-					color: white
-					margin: 0 0 2vh 0
-
-				.project-subtitle
-					font-size: 2.5vh
-					color: rgba(255, 255, 255, 0.7)
-					text-transform: uppercase
-					letter-spacing: 0.5vh
-					margin: 0
-
-		.project-logo
-			position: absolute
-			left: -8vw
-			top: 50%
-			transform: translateY(-50%)
-			z-index: 1
-
-			.logo-image
-				max-width: 250px
-				max-height: 200px
-				object-fit: contain
-				filter: brightness(0.9)
-
-			.placeholder-logo
-				width: 250px
-				height: 125px
-				background: rgba(255, 255, 255, 0.05)
-				border: 1px solid rgba(255, 255, 255, 0.1)
-				border-radius: 1vh
+			.project-subtitle
+				font-size: 2.5vh
 				color: rgba(255, 255, 255, 0.7)
-				display: flex
-				flex-direction: column
-				align-items: center
-				justify-content: center
-				font-size: 1.4vh
-				text-align: center
-				margin: 0 auto
+				text-transform: uppercase
+				letter-spacing: 0.5vh
+				margin: 0
 
 		.project-image
 			width: 100%
@@ -705,31 +646,11 @@
 							display: none
 
 		.project-header
-			.header-content
-				flex-direction: column
-				gap: 3vh
+			.project-title
+				font-size: 6vh
 
-			.title-section
-				.project-title
-					font-size: 6vh
-
-				.project-subtitle
-					font-size: 2vh
-
-		.project-logo
-			position: relative
-			left: auto
-			top: auto
-			transform: none
-			margin-top: 2vh
-
-			.logo-image
-				max-width: 200px
-				max-height: 100px
-
-			.placeholder-logo
-				width: 200px
-				height: 100px
+			.project-subtitle
+				font-size: 2vh
 
 		.project-image
 			height: 30vh
