@@ -93,9 +93,7 @@
 			<h2>Project Scope</h2>
 			<div class="text-box">
 				<p>
-					The scope of this project was to design a lighter wieght break pedal for the Queens Baja off-road racing team in part of a larger wieght reduction project.
-					The target weight for a new design was sub 500g while sustaining a load to the pedal face of 2000N before adding a Factor Of Safety (FOS).
-					Each team member drafted an initial prototype and the remaining iterations focused on stress uniformity to minimizie material usage.
+					The scope of this project was to design a lighter weight break pedal for the Queens Baja off-road racing team in part of a larger weight reduction project. The target weight for a new design was sub 500g while sustaining a load to the pedal face of 2000N before adding a Factor Of Safety (FOS). Each team member drafted an initial prototype and the remaining iterations focused on stress uniformity to minimize material usage.
 				</p>
 			</div>
 		</section>
@@ -169,9 +167,7 @@
 			<h2>Final Design</h2>
 			<div class="text-box">
 				<p>
-					The remaining iterations focused on weight reductions and increasing stress uniformity by removing selectivly removing material from low stress areas in blue.
-					This was done via triangular truss cutouts along the I beam and a large cutout under the pedal face where shear stress is the lowest.
-					This allowed the final deign to acheive a FOS of 1.5 weighing only 472g, capable of sustaining a 3000N load while keeping the yeild stress under that of 6061 ALuminum.
+					The remaining iterations focused on weight reductions and increasing stress uniformity by selectively removing material from low stress areas in blue. This was done via triangular truss cutouts along the I beam and a large cutout under the pedal face where shear stress is the lowest. This allowed the final design to achieve a FOS of 1.5 weighing only 472g, capable of sustaining a 3000N load while keeping the yield stress under that of 6061 Aluminum.
 				</p>
 			</div>
 			<div class="image-container">

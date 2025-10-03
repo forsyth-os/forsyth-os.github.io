@@ -93,9 +93,12 @@
 			<h2>Redesign</h2>
 			<div class="text-box">
 				<p>
-					The redesign process began by implementing an open source MATLAB Simulink program to model and tune the engagement mechanism without the need of a dyno.
-					Unfortunately due to time constraints the outputes were not conclusive, but the groundwork was layed out for future use. 
-					The CAD redesign instead focused on material removal to reduce lathe time and added cooling fins to increase convection at high RPMs.
+					The redesign process began by researching an open source MATLAB Simulink program to help model and tune the engagement mechanism with future dyno testing.
+					The goal was to setup a framework that receives testing data and can simulate how performance varies with physical changes to the system.
+					This is particlualy benificial since unlike an E-CVT, tuning requires physical changes to the system making it difficult to gather large data sets on performance.
+					The CAD redesign focused on material removal to reduce lathe time and altered the cooling fin width to increase convection at high RPMs. 
+					Future work involves implementing an embedded software IR temperature sensor for the CVT belt and to accurately output live temperature data.
+					This will help confirm the effectiveness of the cooling fins and aid in safetly tuning the CVT without overheating.
 				</p>
 			</div>
 		</section>

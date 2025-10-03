@@ -16,6 +16,7 @@
 	let titleWord2Element: HTMLElement = $state()!; 
 	let shortDetailsElement: HTMLElement = $state()!; 
 	let callToActionElement: HTMLElement = $state()!;
+	let expertiseElement: HTMLElement = $state()!;
 
 
 
@@ -79,6 +80,15 @@
 			duration: 900,
 			delay: stagger(80, {start: 500})
 		});
+
+		// Animate expertise table
+		expertiseElement.style.transform = "translateX(150%)";
+		animate(expertiseElement, {
+			translateX: "0%",
+			easing: "cubicBezier(0.165, 0.84, 0.44, 1)",
+			duration: 1200,
+			delay: 600
+		});
 	}
 
 </script>
@@ -123,12 +133,33 @@
 			</div>
 
 			<div class="parallax-wrapper home-back" bind:this={backgroundContainerElement}>
-				{#await loadImage("assets/imgs/home-back.jpg") then src}
+				{#await loadImage("assets/imgs/headshot.JPG") then src}
 					<img src="{src}" bind:this={backgroundImageElement} draggable="false" alt="Home Background" style="width:100%; height: 100%; object-fit: cover;">
 				{/await}
 			</div>
 		</div>
 	</div>
+</div>
+
+<!-- Technical Expertise Table - Right Side -->
+<div class="expertise-container" bind:this={expertiseElement}>
+	<ul class="expertise-list">
+		<li class="list-title">
+			technical expertise
+		</li>
+		<li>
+			SolidWorks CAD & Drafting
+		</li>
+		<li>
+			Simulations (FEA/CFD)
+		</li>
+		<li>
+			Control Systems (LabVIEW/Python)
+		</li>
+		<li>
+			Electrical Schematics (KiCAD)
+		</li>
+	</ul>
 </div>
 
 
@@ -139,8 +170,8 @@
 @include consts.textStyles()
 
 #content-container
-	height: 100vh
-	width: 100vw
+	height: 97vh
+	width: 94vw
 	padding: 12vh 7vw
 	box-sizing: border-box
 	position: relative
@@ -153,7 +184,7 @@
 
 	.flex
 		z-index: 2
-		width: 95%
+		width: 100%
 		height: 100%
 		display: flex
 		flex-direction: row
@@ -169,10 +200,11 @@
 			justify-content: center
 
 			&.second
-				margin-right: 5vw 
+				margin-right: 13vw     
 				justify-content: flex-end
 
 			h1
+				font-size: 15vh
 				font-weight: 400
 				text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3)
 				color: white
@@ -226,9 +258,9 @@
 		position: absolute
 		left: 0
 		z-index: -1
-		width: 80%
+		width: 67%
 		height: 100%
-		margin-left: 5%
+		margin-left: 6%
 		border-radius: 1.5vh
 		overflow: hidden
 		box-sizing: border-box
@@ -253,7 +285,46 @@
 			width: 100%
 			object-fit: cover
 			border-radius: 1.5vh
-			filter: brightness(0.7)
+			filter: brightness(1)
+
+.expertise-container
+	position: fixed
+	right: 3vw
+	top: 12vh
+	height: 73vh
+	display: flex
+	align-items: center
+	z-index: 10
+	width: 25vw
+	min-width: 300px
+
+	@media only screen and (max-width: 1250px)
+		display: none
+
+	.expertise-list
+		list-style-type: none
+		text-align: right
+		margin: 0
+		padding: 0
+
+		li.list-title
+			letter-spacing: 0.6vh
+			font-size: 2vh
+			font-weight: bold
+			color: white
+			margin-bottom: 1vh
+
+		li
+			font-family: consts.$font
+			text-transform: uppercase
+			font-size: 2.0vh
+			letter-spacing: 0.5vh
+			padding: 2vh 0
+			border-bottom: 1px solid rgba(255, 255, 255, 0.3)
+			color: white
+			display: flex
+			flex-direction: column
+			align-items: flex-end
 
 @media only screen and (min-width: 1250px)
 	.h-signature

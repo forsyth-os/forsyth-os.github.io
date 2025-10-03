@@ -56,12 +56,33 @@
 
 		<!-- PROJECT HEADER -->
 		<header class="project-header">
-			<h1 class="project-title" in:maskSlideIn={{ duration: 1200, delay: 150, reverse: true }}>
-				Accelerator Target Slider
-			</h1>
-			<p class="project-subtitle" in:maskSlideIn={{ duration: 1200, delay: 200, reverse: true }}>
-				Mechatronic & Control System Design
-			</p>
+			<div class="header-content">
+				<div class="title-section">
+					<h1 class="project-title" in:maskSlideIn={{ duration: 1200, delay: 150, reverse: true }}>
+						Accelerator Target Slider
+					</h1>
+					<p class="project-subtitle" in:maskSlideIn={{ duration: 1200, delay: 200, reverse: true }}>
+						Mechatronic & Control System Design
+					</p>
+				</div>
+				<div class="project-logo" in:maskSlideIn={{ duration: 1200, delay: 280, reverse: true }}>
+					{#if isClient}
+						{#await loadImage("/assets/imgs/work-back/project1/logo.png") then src}
+							<img src="{src}" alt="Project Logo" class="logo-image">
+						{:catch error}
+							<div class="placeholder-logo">
+								<!-- ADD YOUR LOGO: Place logo.png in static/assets/imgs/work-back/project1/ -->
+								Project Logo<br>
+								<small>Error: {error?.message || 'Logo not found'}</small>
+							</div>
+						{/await}
+					{:else}
+						<div class="placeholder-logo">
+							Loading...
+						</div>
+					{/if}
+				</div>
+			</div>
 		</header>
 
 		<!-- PROJECT COVER IMAGE -->
@@ -90,25 +111,6 @@
 			{/if}
 		</div>
 
-		<!-- PROJECT LOGO SECTION -->
-		<div class="project-logo" in:maskSlideIn={{ duration: 1200, delay: 280, reverse: true }}>
-			{#if isClient}
-				{#await loadImage("/assets/imgs/work-back/project1/logo.png") then src}
-					<img src="{src}" alt="Project Logo" class="logo-image">
-				{:catch error}
-					<div class="placeholder-logo">
-						<!-- ADD YOUR LOGO: Place logo.png in static/assets/imgs/work-back/project1/ -->
-						Project Logo<br>
-						<small>Error: {error?.message || 'Logo not found'}</small>
-					</div>
-				{/await}
-			{:else}
-				<div class="placeholder-logo">
-					Loading...
-				</div>
-			{/if}
-		</div>
-
 		<!-- SCOPE SECTION -->
 		<section bind:this={scopeSection} class="hello-world" in:maskSlideIn={{ duration: 1200, delay: 300, reverse: true }}>
 			<h2>Project Scope</h2>
@@ -130,11 +132,7 @@
 			<h3 class="subsection-title">µPISH Stages</h3>
 			<div class="text-box">
 				<p>
-					The mechanical system design began with the development of a minature Proton Irradiation Sample Holder (µPISH). 
-					This design functionally replicates the previous PISH II with a fraction of the footprint, allowing up to four samples to be mounted to each frame totalling eight.
-					The most significant design challenge was enabling samples to be irradiated from room temperature up to 500°C while adjacent samples stay below 100°C to prevent annealing.
-					This was accomplished with a high-temp SS stage shown below, and a low-temp Cu stage for better conductivity with the cooled Al frame. 
-					Sample temperature is regulated with PID control of the resistance heaters under each sample and water cooling thorugh the common frame.
+					The mechanical system design began with the development of a miniature Proton Irradiation Sample Holder (µPISH). This design functionally replicates the previous PISH II with a fraction of the footprint, allowing up to four samples to be mounted to each frame totalling eight. The most significant design challenge was enabling samples to be irradiated from room temperature up to 500°C while adjacent samples stay below 100°C to prevent annealing. This was accomplished with a high-temp SS stage shown below, and a low-temp Cu stage for better conductivity with the cooled Al frame. Sample temperature is regulated with PID control of the resistance heaters under each sample and water cooling through the common frame.
 				</p>
 			</div>
 		</section>
@@ -165,11 +163,7 @@
 			<h3 class="subsection-title">Actuation System</h3>
 			<div class="text-box">
 				<p>
-					The target slider is able to align mounted targets with the proton beam with the use of linear actuators. 
-					The frames are attached to custom made cooling lines that pass through a linear sleeve bearing, attached to 8in stroke bellows outside the UHV chamber to hold vacuum.
-					The ends of the cooling line have milled grooves to attach wall mounted liner actuators, and a spout to attach a water or air line to.
-					The actuation system uses a combination of conflat flange (CF), quick clamp (KF), and NPT threaded fittings to ensure ultra high vacuum (UHV) compatability while remaining modular for easy maintennace and upgradability.
-
+					The target slider is able to align mounted targets with the proton beam with the use of linear actuators. The frames are attached to custom made cooling lines that pass through a linear sleeve bearing, attached to 8in stroke bellows outside the UHV chamber to hold vacuum. The ends of the cooling line have milled grooves to attach wall mounted liner actuators, and a spout to attach a water or air line to. The actuation system uses a combination of ConFlat flange (CF), quick clamp (KF), and NPT threaded fittings to ensure ultra high vacuum (UHV) compatibility while remaining modular for easy maintenance and upgradability.
 				</p>
 			</div>
 		</section>
@@ -239,10 +233,7 @@
 			<h3 class="subsection-title">Thermal Testing</h3>
 			<div class="text-box">
 				<p>
-					Once the high-temp and low-temp varitions of the µPISH stage were manufactured, various combinations of adjacent stage and sample types were tested for transverse heating. 
-					Testing was done to determine transient and steady state responses using a thermocouple housed inside of each sample. 
-					Testing showed that the low temperature stage caused and was more sesceptible to transvserse heating, while more conductive sample types heated faster but ultimately reached a similar steady state.
-					It was proven that the µPISH were successfully designed to mitigate transverse heating as adjacent sample temperatures remained  below 35°C with primary temepratures up to 500°C.
+					Once the high-temp and low-temp variations of the µPISH stage were manufactured, various combinations of adjacent stage and sample types were tested for transverse heating. Testing was done to determine transient and steady state responses using a thermocouple housed inside of each sample. Testing showed that the low temperature stage caused and was more susceptible to transverse heating, while more conductive sample types heated faster but ultimately reached a similar steady state. It was proven that the µPISH were successfully designed to mitigate transverse heating as adjacent sample temperatures remained below 35°C with primary temperatures up to 500°C.
 				</p>
 			</div>
 		</section>
@@ -309,11 +300,7 @@
 			<h3 class="subsection-title">Electrical Performance</h3>
 			<div class="text-box">
 				<p>
-					Electrical testing proved that the ceramic resistance heater begins to conduct its own trace and leak current into the stack at ~200°C as observed below.
-					It was also observed that the sintered silicone carbide used as an electrical insulator had an extremely poor resistance temperature profile.
-					Due do the current divider this generated, the graph below shows the corrected values for currents measured.
-					Additionally, seebeck voltages previously observed did not occour within the operatable temperatre range of the target slider.
-					Moving forward, the SiN ceramic should be replaced by a ceramic that holds over 10MΩ through 500°C to adequately measure the irradtiation dose and mitigate noise from the heater.
+					Electrical testing proved that the ceramic resistance heater begins to conduct its own trace and leak current into the stack at ~200°C as observed below. It was also observed that the sintered silicone carbide used as an electrical insulator had an extremely poor resistance temperature profile. Due do the current divider this generated, the graph below shows the corrected values for currents measured. Additionally, seebeck voltages previously observed did not occur within the operatable temperature range of the target slider. Moving forward, the SiN ceramic should be replaced by a ceramic that holds over 10MΩ through 500°C to adequately measure the irradiation dose and mitigate noise from the heater.
 				</p>
 			</div>
 		</section>
@@ -379,10 +366,7 @@
 			<h3 class="subsection-title">Software Testing</h3>
 			<div class="text-box">
 				<p>
-					Software testing was conduced with a line laser to represent the static beam and a micrometer to measure true accuracy with repeated position calling.
-					The PID approach proved to drastically increase steady state accuracy relative to a single speed motor drive.
-					This approach intrudced high amplitude low frequency noise into the POT feedback, however, intrucing a median filter mitigated this as shown in the top graph below.
-					This software has since been developed to be locally stored on motor controlling arduino to be resistant to drops in LabVIEW connection while still reporting positional feedback to the control room.
+					Software testing was conduced with a line laser to represent the static beam and a micrometer to measure true accuracy with repeated position calling. The PID approach proved to drastically increase steady state accuracy relative to a single speed motor drive. This approach introduced high amplitude low frequency noise into the POT feedback, however, introducing a median filter mitigated this as shown in the top graph below. This software has since been developed to be locally stored on motor controlling Arduino to be resistant to drops in LabVIEW connection while still reporting positional feedback to the control room
 				</p>
 			</div>
 		</section>
@@ -413,9 +397,7 @@
 			<h2>Future Work</h2>
 			<div class="text-box">
 				<p>
-					The remaing work to be completed for the target slider will focus on the development of a completely automated irradition control system to manage sample alignment, charge dosage, and temperature control.
-					This system will be composed of a master LabVIEW VI to trigger local Arduino motor and temperature control.
-					The control system must be accompanied by various failsafes that trigger beam shut down to reliably run without continous operator supervision.
+					The remaining work to be completed for the target slider will focus on the development of a completely automated irradiation control system to manage sample alignment, charge dosage, and temperature control. This system will be composed of a master LabVIEW VI to trigger local Arduino motor and temperature control. The control system must be accompanied by various fail safes that trigger beam shut down to reliably run without continuous operator supervision.
 				</p>
 			</div>
 		</section>
@@ -482,30 +464,44 @@
 			margin-bottom: 5.6vh
 			margin-top: 2vh
 
-			.project-title
-				font-size: 8vh
-				margin-bottom: 2vh
-				color: white
+			.header-content
+				display: flex
+				align-items: center
+				justify-content: center
+				position: relative
 
-			.project-subtitle
-				font-size: 2.5vh
-				color: rgba(255, 255, 255, 0.7)
-				text-transform: uppercase
-				letter-spacing: 0.5vh
+			.title-section
+				text-align: center
+				z-index: 2
+
+				.project-title
+					font-size: 8vh
+					color: white
+					margin: 0 0 2vh 0
+
+				.project-subtitle
+					font-size: 2.5vh
+					color: rgba(255, 255, 255, 0.7)
+					text-transform: uppercase
+					letter-spacing: 0.5vh
+					margin: 0
 
 		.project-logo
-			text-align: center
-			margin: 4vh 0
+			position: absolute
+			left: -15vw
+			top: 50%
+			transform: translateY(-50%)
+			z-index: 1
 
 			.logo-image
-				max-width: 350px
-				max-height: 175px
+				max-width: 250px
+				max-height: 200px
 				object-fit: contain
 				filter: brightness(0.9)
 
 			.placeholder-logo
-				width: 350px
-				height: 175px
+				width: 250px
+				height: 125px
 				background: rgba(255, 255, 255, 0.05)
 				border: 1px solid rgba(255, 255, 255, 0.1)
 				border-radius: 1vh
@@ -709,11 +705,31 @@
 							display: none
 
 		.project-header
-			.project-title
-				font-size: 6vh
+			.header-content
+				flex-direction: column
+				gap: 3vh
 
-			.project-subtitle
-				font-size: 2vh
+			.title-section
+				.project-title
+					font-size: 6vh
+
+				.project-subtitle
+					font-size: 2vh
+
+		.project-logo
+			position: relative
+			left: auto
+			top: auto
+			transform: none
+			margin-top: 2vh
+
+			.logo-image
+				max-width: 200px
+				max-height: 100px
+
+			.placeholder-logo
+				width: 200px
+				height: 100px
 
 		.project-image
 			height: 30vh

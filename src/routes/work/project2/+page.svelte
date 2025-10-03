@@ -93,11 +93,7 @@
 			<h2>Scope</h2>
 			<div class="text-box">
 				<p>
-					The self playing chess board was decided upon as a personal project to gain a broad experinece across system design and control without a large expense.
-					The goal was to develop a system capable of making chess moves using an electromagent housed on a 2D gantry underneath the chess board.
-					Since this requires the peices to be magentic, chess moves can then be detected with a reed switch placed under each square and multiplexed by a microcontroller.
-					My role in this project was to deisgn all aspects responsible for physical gameplay, while my roomate programmed his own chess engine with an interactive website.
-					Together, this project is capable of bringing features from chess.com inlcuding AI opponents, puzzles, and game evaluation to a physical chess board.
+					The self playing chess board was decided upon as a personal project to gain a broad experience across system design and control without a large expense. The goal was to develop a system capable of making chess moves using an electromagnet housed on a 2D gantry underneath the chess board. Since this requires the pieces to be magnetic, chess moves can then be detected with a reed switch placed under each square and multiplexed by a microcontroller. My role in this project was to design all aspects responsible for physical gameplay, while my project partner programmed his own chess engine with an interactive website. Together, this project can bring features from chess.com including AI opponents, puzzles, and game evaluation to a physical chess board.
 				</p>
 			</div>
 		</section>
@@ -107,10 +103,7 @@
 			<h2>Mechanical Design</h2>
 			<div class="text-box">
 				<p>
-					The mechanical design of the 2D gantry revolved around the dimensions of the low-cost hardware initially purchased.
-					A stacked linear guide rail design was chosen to maximize the electromagents range for a fixed box size, allowing for a larger chess board and more clearance between peices.
-					This required the development of a floating motor mount to move the magnet along the second axis, and precise tolerancing to prevent deflection of the upper rail.
-					The housings were 3D printed to reduce cost/weight and assembled with bolts to remain modular.
+					The mechanical design of the 2D gantry revolved around the dimensions of the low-cost hardware initially purchased. A stacked linear guide rail design was chosen to maximize the electromagnetic range for a fixed box size, allowing for a larger chess board and more clearance between pieces. This required the development of a floating motor mount to move the magnet along the second axis, and precise tolerancing to prevent deflection of the upper rail. The housings were 3D printed to reduce cost/weight and assembled with bolts to remain modular.
 
 				</p>
 			</div>
@@ -122,10 +115,7 @@
 			<h2>Electrical Design</h2>
 			<div class="text-box">
 				<p>
-					The electrical hardware design began with the layout shown below with one 12V power supply and Arduino controlling two stepper motors with limit switches.
-					Nema 17 stepper motors were proposed for their high torque and accuray without the need for sensors, however were replaced with BYJ steppers to reduce cost, footprint, and weight to allow for a floating motor design.
-					To account for the reduced torque, the 12V power supply was replaced with a 24V power supply utilizing A4988 current limiting motor drivers.
-					Peice detection is accomplished with an array of reed switches measured through four 16 channal analog multiplexers. 
+					The electrical hardware design began with the layout shown below with one 12V power supply and Arduino controlling two stepper motors with limit switches. Nema 17 stepper motors were proposed for their high torque and accuracy without the need for sensors, however, were replaced with BYJ steppers to reduce cost, footprint, and weight to allow for a floating motor design. To account for the reduced torque, the 12V power supply was replaced with a 24V power supply utilizing A4988 current limiting motor drivers. Piece detection is accomplished with an array of reed switches measured through four 16 channel analog multiplexers.
 
 				</p>
 			</div>
@@ -157,11 +147,7 @@
 			<h2>Future Work</h2>
 			<div class="text-box">
 				<p>
-					Currently, the chess board is able to move peices with the electromagnet but lacks the ability to measure where peices are on the board.
-					The remaining work inovlves calibrating the peice's magnetic feild strength to that of Electromagnet such that only the desired peice is moved along the board.
-					The reed switch sensitivity must then be matched accordingly so that it is not noised by adjacent peices causing false positive readings.
-					Additionally, a path finding algorithm on the Arduino must be developed to take positional outputs from the chess engine and find the most efficient not contacting path there.
-					Once this has been completed, the electrical circuit should move from the breadboard to a soldered perfboard and mounted in a 3D printed housing for a permanent design.
+					Currently, the chess board can move pieces with the electromagnet but lacks the ability to measure where pieces are on the board. The remaining work involves calibrating the piece’s magnetic field strength to that of the Electromagnet such that only the desired piece is moved along the board. The reed switch sensitivity must then be matched accordingly so that it is not noised by adjacent pieces causing false positive readings. Additionally, a path finding algorithm on the Arduino must be developed to take positional outputs from the chess engine and find the most efficient not contacting path there. Once this has been completed, the electrical circuit should move from the breadboard to a soldered perfboard and mounted in a 3D printed housing for a permanent design.
 
 				</p>
 			</div>
