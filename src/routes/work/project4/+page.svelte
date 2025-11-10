@@ -224,6 +224,8 @@
 				padding: 4vh
 				border-radius: 2vh
 				border: 1px solid rgba(255, 255, 255, 0.1)
+				max-width: 95%
+				margin: 0 auto
 
 				p
 					font-size: 2.2vh
@@ -249,6 +251,8 @@
 				padding: 4vh
 				border-radius: 2vh
 				border: 1px solid rgba(255, 255, 255, 0.1)
+				max-width: 95%
+				margin: 0 auto
 
 				p
 					font-size: 2.2vh
