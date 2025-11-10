@@ -145,7 +145,7 @@
 <div class="expertise-container" bind:this={expertiseElement}>
 	<ul class="expertise-list">
 		<li class="list-title">
-			technical expertise
+			technical experience
 		</li>
 		<li>
 			SolidWorks CAD & Drafting
@@ -176,8 +176,8 @@
 @include consts.textStyles()
 
 #content-container
-	height: 97vh
-	width: 94vw
+	height: 95vh
+	width: 98vw
 	padding: 12vh 7vw
 	box-sizing: border-box
 	position: relative
@@ -203,14 +203,16 @@
 			height: 100%
 			display: flex
 			flex-direction: column
-			justify-content: center
+			justify-content: flex-start
+			padding-top: -15vh
+			margin-top: -6vh
 
 			&.second
-				margin-right: 13vw     
+				margin-right: 15vw     
 				justify-content: flex-end
 
 			h1
-				font-size: 15vh
+				font-size: 13vh
 				font-weight: 400
 				text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3)
 				color: white
@@ -280,11 +282,11 @@
 
 		@media only screen and (max-width: 1250px)
 			&
-				opacity: 0.7
+				opacity: 1
 
 		@media only screen and (max-width: 750px)
 			&
-				opacity: 0.3
+				opacity: 1
 
 		img
 			height: 100%
@@ -315,7 +317,7 @@
 
 		li.list-title
 			letter-spacing: 0.6vh
-			font-size: 2.0vh
+			font-size: 2.3vh
 			font-weight: bold
 			color: white
 			margin-bottom: 1vh
@@ -362,7 +364,7 @@
 
 	#content-container .flex .bottom
 		text-align: left
-		left: 5vw
+		left: 7vw
 
 	.parallax-wrapper
 		width: 100% !important
@@ -371,6 +373,22 @@
 @media only screen and (max-width: 750px)
 	.occupation
 		width: 70%
+	
+	.flex
+		.flex-wrapper.second
+			// Move "Alex Forsyth" up independently using transform
+			h1.title
+				transform: translateY(-4.5vh)
+				font-size: 17vw !important
+				margin-left: 2vw
+			
+			// Move the subtitle down independently
+			.occupation
+				margin-top: 22vh !important
+				margin-left: 2vw
+				
+				.paragraph
+					font-size: 2.2vh !important
 
 
 #signature

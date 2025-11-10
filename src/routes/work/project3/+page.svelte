@@ -199,15 +199,22 @@
 	@use "../../../lib/consts" as consts
 	@include consts.textStyles()
 
+	/* Remove default browser margins */
+	:global(html),
+	:global(body)
+		margin: 0 !important
+		padding: 0 !important
+
 	.project-page
 		min-height: 100vh
 		background-color: #222224
 		color: white
-		padding: 15vh 10vw 10vh 10vw
+		padding: 15vh 3vw 10vh 3vw
 		box-sizing: border-box
+		margin: 0 !important
 
 		.container
-			max-width: 1200px
+			max-width: 1600px
 			margin: 0 auto
 
 		.section-nav
@@ -263,7 +270,7 @@
 
 		.project-image
 			width: 100%
-			height: 50vh
+			height: 55vh
 			margin-bottom: 8vh
 			border-radius: 2vh
 			overflow: hidden
@@ -305,7 +312,7 @@
 				border: 1px solid rgba(255, 255, 255, 0.1)
 
 				p
-					font-size: 2vh
+					font-size: 2.2vh
 					line-height: 1.6
 					color: rgba(255, 255, 255, 0.9)
 					margin-bottom: 2vh
@@ -331,7 +338,7 @@
 				margin-bottom: 4vh
 
 				p
-					font-size: 2vh
+					font-size: 2.2vh
 					line-height: 1.6
 					color: rgba(255, 255, 255, 0.9)
 					margin-bottom: 2vh
@@ -345,7 +352,7 @@
 					color: rgba(255, 255, 255, 0.9)
 
 					li
-						font-size: 2vh
+						font-size: 2.2vh
 						line-height: 1.6
 						margin-bottom: 1vh
 						font-family: 'Courier New', monospace
@@ -396,23 +403,41 @@
 					background: rgba(255, 255, 255, 0.2)
 
 	@media only screen and (max-width: 750px)
+		/* ========== MOBILE IMAGE CONTAINER SIZE CONTROL ========== */
+		/* Adjust max-height to control how large images can be (prevent overflow) */
+		/* Set to 'none' or very large value to allow images to use full width */
 		.project-page
+			--mobile-image-max-height: none  /* Set to 'none' to remove height constraint, or use value like '80vh' */
 			padding: 15vh 5vw 5vh 5vw
+			margin: 0 !important
 
 		.section-nav
 			position: relative
 			top: auto
 			left: auto
-			margin: 1vh 0 3vh 0
+			margin: 1vh auto 3vh auto !important
+			text-align: center
+			width: 100%
+			display: flex
+			justify-content: center
 
 			.nav-list
-				flex-direction: column
-				gap: 0.5vh
+				display: flex !important
+				flex-direction: row !important
+				gap: 4.5vw !important
+				align-items: center !important
+				justify-content: center !important
+				padding: 0 !important
+				margin: 0 auto !important
+				flex-wrap: wrap !important
 
 				li
+					margin: 0 !important
+
 					.nav-button
-						font-size: 2.2vh
+						font-size: 1.5vh !important
 						padding: 1vh 0
+						text-align: center
 
 						&:not(:last-child)::after
 							display: none
@@ -424,17 +449,88 @@
 			.project-subtitle
 				font-size: 2vh
 
+		/* Cover image - remove dead space */
+		.project-image :global(.a-mask),
+		.project-image :global(.a-content)
+			margin: 0 !important
+			padding: 0 !important
+			display: block !important
+			line-height: 0 !important
+		
 		.project-image
-			height: 30vh
+			height: auto !important
+			min-height: unset !important
+			max-height: none !important
+			aspect-ratio: unset !important
+			margin-top: 2vh !important
+			margin-bottom: 2vh !important
+			overflow: visible !important
+			border-radius: 0 !important
+			position: static !important
+			
+			.project-pic
+				width: 100% !important
+				height: auto !important
+				max-height: var(--mobile-image-max-height, none) !important
+				display: block !important
+				margin: 0 !important
+				padding: 0 !important
+				vertical-align: bottom !important
+				line-height: 0 !important
 
 		.hello-world
+			margin-top: 2vh !important
+			margin-bottom: 2vh !important
+			
 			.text-box
 				padding: 3vh
 
+		/* Detail images - remove dead space */
+		section.project-section :global(.a-mask),
+		section.project-section :global(.a-content)
+			margin: 0 !important
+			padding: 0 !important
+			display: block !important
+			line-height: 0 !important
+		
+		section.project-section
+			margin-top: 2vh !important
+			margin-bottom: 2vh !important
+		
 		.project-section
+			margin-top: 2vh !important
+			margin-bottom: 2vh !important
+			
 			.text-box
 				padding: 3vh
-
+			
 			.image-container
-				height: 30vh
+				height: auto !important
+				min-height: unset !important
+				max-height: none !important
+				aspect-ratio: unset !important
+				overflow: visible !important
+				width: 100% !important
+				margin: 0 !important
+				padding: 0 !important
+				display: block !important
+				border-radius: 0 !important
+				position: static !important
+				line-height: 0 !important
+				
+				.placeholder-image
+					width: 100% !important
+					height: auto !important
+					min-height: 20vh !important
+					max-height: var(--mobile-image-max-height, none) !important
+				
+				.project-detail-pic
+					width: 100% !important
+					height: auto !important
+					max-height: var(--mobile-image-max-height, none) !important
+					display: block !important
+					margin: 0 !important
+					padding: 0 !important
+					vertical-align: bottom !important
+					line-height: 0 !important
 </style>

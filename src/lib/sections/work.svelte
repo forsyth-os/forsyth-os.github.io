@@ -220,7 +220,7 @@ import { base } from '$app/paths';
 					<img src="{src}" alt="Scroll right to see more projects">
 				{/await}
 			</div>
-			<div class="scroll-text">Drag & Scroll</div>
+			<div class="scroll-text">Click & Scroll</div>
 		</div>
 	</div>
 </div>

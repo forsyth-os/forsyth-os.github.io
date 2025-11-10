@@ -87,7 +87,7 @@
 		<ul class="list first">
 			<li class="list-title">
 				<div in:letterSlideIn={{ initDelay: 400 }}>
-					technical expertise
+					technical experience
 				</div>
 			</li>
 			<li>

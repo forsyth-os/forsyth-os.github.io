@@ -125,15 +125,15 @@
 		-webkit-transition: width 0.5s ease, height 0.5s ease
 
 	&.active .dot
-		width: 4vh
-		height: 4vh
+		width: 3vh
+		height: 3vh
 
 	&.disabled .dot
 		width: 0 !important
 		height: 0 !important
 
 	&.hover .dot
-		width: 7.5vh
-		height: 7.5vh
+		width: 5.5vh
+		height: 5.5vh
 
 </style>
