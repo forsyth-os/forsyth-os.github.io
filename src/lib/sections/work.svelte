@@ -191,7 +191,7 @@ import { base } from '$app/paths';
 
 						<a 
 							class="button item-link interactive"
-							href={`${base}/work/${item.id}`}
+							href={item.id === "project1" ? `${base}/assets/imgs/work-back/project1/CERN_Poster.pdf` : `${base}/work/${item.id}`}
 							onmousedown={(e) => e.stopPropagation()}
 							onclick={(e) => e.stopPropagation()}
 							in:maskSlideIn={{
@@ -705,7 +705,7 @@ import { base } from '$app/paths';
 				z-index: 2
 
 				.button
-					font-size: 1.3vw
+					font-size: 1.04vw
 					letter-spacing: 0.1vw
 					margin-top: 2vh
 					text-transform: uppercase
@@ -713,7 +713,7 @@ import { base } from '$app/paths';
 				.item-title
 					font-family: consts.$font
 					font-weight: normal
-					font-size: 2.5vw
+					font-size: 2vw
 					z-index: 0
 					opacity: 1
 					letter-spacing: 0.1vw
@@ -748,10 +748,10 @@ import { base } from '$app/paths';
 					width: calc(55vw - 10vh)
 
 					.item-title
-						font-size: 5vw
+						font-size: 4vw
 
 					.item-link
-						font-size: 2vh
+						font-size: 1.6vh
 
 		@media only screen and (max-width: 650px)
 			.list-item
@@ -761,7 +761,7 @@ import { base } from '$app/paths';
 					width: calc(70vw - 10vh)
 
 					.item-title
-						font-size: 4.5vh
+						font-size: 3.6vh
 
 	.scroll-indicator
 		position: absolute

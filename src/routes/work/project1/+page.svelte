@@ -408,7 +408,9 @@
 
 		.container
 			max-width: 1600px
+			width: 100%
 			margin: 0 auto
+			box-sizing: border-box
 
 		.section-nav
 			position: absolute
@@ -464,15 +466,18 @@
 
 		.project-image
 			width: 100%
+			max-width: 100%
 			height: 60vh
 			margin-bottom: 8vh
 			border-radius: 2vh
 			overflow: hidden
 			position: relative
 			aspect-ratio: 4/3
+			box-sizing: border-box
 
 			.project-pic
 				width: 100%
+				max-width: 100%
 				height: 100%
 				object-fit: contain
 
@@ -512,7 +517,9 @@
 				border-radius: 2vh
 				border: 1px solid rgba(255, 255, 255, 0.1)
 				max-width: 95%
+				width: 100%
 				margin: 0 auto
+				box-sizing: border-box
 
 				p
 					font-size: 2.2vh
@@ -546,14 +553,17 @@
 
 			.image-container
 				width: 100%
+				max-width: 100%
 				height: 45vh
 				border-radius: 2vh
 				overflow: hidden
 				position: relative
 				aspect-ratio: 4/3
+				box-sizing: border-box
 
 				.project-detail-pic
 					width: 100%
+					max-width: 100%
 					height: 100%
 					object-fit: contain
 					margin: 0 auto

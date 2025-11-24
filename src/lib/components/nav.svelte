@@ -91,12 +91,6 @@ import { base } from "$app/paths";
 							</button>
 						</li>
 					{/if}
-					<li use:introAnimation={{ delay: 1250 }}>
-						<a href={`${base}/assets/imgs/CV.pdf`} target="_blank" in:mobileTransitionSwitcher={{ delay: 320 }}>CV</a>
-					</li>
-					<li use:introAnimation={{ delay: 1300 }}>
-						<a href={`${base}/assets/imgs/Reference.pdf`} target="_blank" in:mobileTransitionSwitcher={{ delay: 340 }}>Reference</a>
-					</li>
 						<li class="mobile">
 							<a href="mailto:alexforsyth2@gmail.com" target="_blank" in:mobileTransitionSwitcher={{ delay: 350 }}>Contact</a>
 						</li>
